@@ -24,7 +24,9 @@ body{
 
 .container {
   background-color: #000000;
-  width:100px;
+  width:1000px;
   margin:30px auto;
   display: grid;
+  grid-template-rows: 100px 100px 100px 100px 100px 100px;
+  grid-template-columns: 100px 100px 100px 100px;
 }
