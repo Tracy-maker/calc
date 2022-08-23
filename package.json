@@ -4,7 +4,7 @@
   "description": "landing page for calculator",
   "main": "index.js",
   "scripts": {
-    "compile:sass": "node-sass calc/sass/main.scss calc/css/style.css"
+    "compile:sass": "node-sass sass/main.scss css/style.css"
   },
   "repository": {
     "type": "git",
