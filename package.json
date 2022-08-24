@@ -12,7 +12,9 @@
   },
   "author": "Tina",
   "license": "ISC",
-  "dependencies": {},
+  "dependencies": {
+    "live-server": "^1.2.2"
+  },
   "devDependencies": {
     "node-sass": "^7.0.1"
   }
