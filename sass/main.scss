@@ -25,8 +25,8 @@ body{
 .container {
   background-color: $color-background;
   width:600px;
-  height:700px;
-  margin:80px auto;
+  height:750px;
+  margin:50px auto;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -35,7 +35,7 @@ body{
   & .item {   
     display: grid;
     grid-template-rows: 100px 100px 100px 100px 100px 100px;
-    grid-template-columns: 100px 100px 100px 100px;
+    grid-template-columns: 110px 110px 110px 110px;
     background-color: $color-text-content;
    
   }
