@@ -2,7 +2,7 @@ $color-background:#000000;
 $color-button:lightblue;
 $color-function-button:yellow;
 $color-link-button:red;
-$color-font:white;
+$color-text-content:white;
 
 
 $font-primary: 'Nunito', sans-serif;
@@ -24,9 +24,9 @@ body{
 
 .container {
   background-color: $color-background;
-  width:800px;
-  height:100px;
-  margin:200px auto;
+  width:600px;
+  height:700px;
+  margin:80px auto;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -34,12 +34,33 @@ body{
   
   & .item {   
     display: grid;
-
     grid-template-rows: 100px 100px 100px 100px 100px 100px;
-    grid-template-columns: 200px 100px 100px 100px;
+    grid-template-columns: 100px 100px 100px 100px;
+    background-color: $color-text-content;
+   
   }
 
-  &.text-num {
-    ba
+  & .text-num {
+    background-color:$color-text-content;
+    font-size: 30px;
+    font-family: $font-display;
+    color: $color-background;
+    grid-column-start: 1;
+    grid-column-end: 5; 
+  }
+
+  & .cancel, 
+  .remove-num,
+  .minus-plus,
+  .division,
+  .multi, .substraction,
+  .add {
+    background-color: $color-button;
+  }
+  & .link-school{
+    background-color: $color-link-button;
+  }
+  & .point, .equal{
+    background-color: $color-function-button;
   }
 }
