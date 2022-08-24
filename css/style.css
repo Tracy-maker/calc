@@ -28,7 +28,8 @@ body {
     font-family: "Josefin", sans-serif;
     color: #000000;
     grid-column-start: 1;
-    grid-column-end: 5; }
+    grid-column-end: 5;
+    text-align: right; }
   .container .cancel,
   .container .remove-num,
   .container .minus-plus,
