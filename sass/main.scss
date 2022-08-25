@@ -3,6 +3,7 @@ $color-button:lightblue;
 $color-function-button:yellow;
 $color-link-button:red;
 $color-text-content:white;
+$color-button-hover:grey;
 
 
 $font-primary: 'Nunito', sans-serif;
@@ -21,7 +22,6 @@ html {
 body{
     font-family: $font-primary;
 }
-
 .container {
   background-color: $color-background;
   width:600px;
@@ -37,6 +37,11 @@ body{
     grid-template-rows: 100px 100px 100px 100px 100px 100px;
     grid-template-columns: 110px 110px 110px 110px;
     background-color: $color-text-content;
+    
+    &:hover {
+      background-color: $color-button-hover;
+      border:1px solid;
+    }
    
   }
 
@@ -65,4 +70,5 @@ body{
   & .point, .equal{
     background-color: $color-function-button;
   }
+
 }
