@@ -1,7 +1,7 @@
 function init() {
   var num = document.getElementById("num");
   num.value = 0;
-  disabled = "disabled";
+  num.disabled = "disabled";
 
   // function num_1_click() {
   //   var num = document.getElementById("num");
@@ -14,62 +14,85 @@ function init() {
   //   document.getElementById("num").value = n;
   // }
   var inputButton = document.getElementsByTagName("input");
-  for (i = 0; i < inputButton.length; i++) {
+  var fn;
+  var btnNum1;
+  
+  for (var i = 0; i < inputButton.length; i++) {
+ 
     inputButton[i].onclick = function () {
-      if (isNumber(this.value)) {
+      if (!isNaN(this.value)) {
+          var btnNum;
         if (isNull(num.value)) {
           num.value = this.value;
         } else {
           num.value = num.value + this.value;
         }
-      } else {
+      }else{ 
+      
         var btnNum = this.value;
 
         switch (btnNum) {
           case "+":
-            btnNum = Number(num.value);
+            btnNum1 = Number(num.value);
             num.value = 0;
             fn = "+";
             break;
           case "-":
-            btnNum = Number(num.value);
+            btnNum1 = Number(num.value);
+            num.value = 0;
+            fn = "-";
+            break;
+          case "*":
+            btnNum1 = Number(num.value);
             num.value = 0;
             fn = "*";
             break;
-          case "+":
-            btnNum = Number(num.value);
+          case "/":
+            btnNum1 = Number(num.value);
             num.value = 0;
-            fn = "";
+            fn = "/";
             break;
-          case "+":
-            btnNum = Number(num.value);
-            num.value = 0;
-            fn = "+";
+          case ".":
+            num.value = dotNumber(num.value);
             break;
-          case "+":
-            btnNum = Number(num.value);
-            num.value = 0;
-            fn = "+";
+          case "←":
+            num.value = back(num.value);
             break;
-          case "+":
-            btnNum = Number(num.value);
-            num.value = 0;
-            fn = "+";
+          case "c":
+            num.value = "0";
+            break;
+          case "+/-":
+            num.value = sign(num.value);
+            break;
+          case "=":
+            switch (fn) {
+              case "+":
+                num.value = btnNum1 + Number(num.value);
+                break;
+              case "-":
+                num.value = btnNum1 - Number(num.value);
+                break;
+              case "*":
+                num.value = btnNum1 * Number(num.value);
+                break;
+              case "/":
+                if (Number(num.value) == 0) {
+                  alert(" Divisor cannot be 0");
+                  num.value = 0;
+                } else {
+                  num.value = btnNum1 / Number(num.value);
+                }
+
+                break;
+            }
             break;
         }
       }
-    };
+    }
   }
 }
-//
-function isNumber(n) {
-  if (!isNaN(n)) {
-    return true;
-  } else {
-    return !isNaN(n);
-  }
-}
-//
+
+
 function isNull(n) {
   if (n == "0" || n.length == 0) {
     return true;
@@ -90,5 +113,10 @@ function back(n) {
   if (isNull(n)) {
     n = "0";
   }
+  return n;
+}
+//
+function sign(n) {
+  n = Number(n) * -1;
   return n;
 }

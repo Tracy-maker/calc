@@ -23,7 +23,7 @@ body {
     grid-template-columns: 110px 110px 110px 110px;
     background-color: white; }
     .container .item:hover {
-      background-color: green;
+      background-color: grey;
       border: 1px solid; }
   .container .text-num {
     background-color: white;
@@ -41,7 +41,7 @@ body {
   .container .multi, .container .substraction,
   .container .add {
     background-color: lightblue; }
-  .container .link-school {
+  .container .history {
     background-color: red; }
   .container .point, .container .equal {
     background-color: yellow; }
